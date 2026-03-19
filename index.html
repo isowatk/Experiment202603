@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>実験説明</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: sans-serif; max-width: 800px; margin: 40px auto; line-height: 1.8; padding: 0 16px; }
+    .box { border: 1px solid #ccc; padding: 24px; border-radius: 12px; }
+    button { font-size: 18px; padding: 12px 20px; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>実験の説明</h1>
+    <p>この実験では画面上の刺激に反応していただきます。</p>
+    <p>所要時間は約10分です。静かな環境で実施してください。</p>
+    <label>
+      <input type="checkbox" id="agree">
+      説明を読み、参加に同意します
+    </label>
+    <br><br>
+    <button id="start" disabled>実験を開始</button>
+  </div>
+
+  <script>
+    const agree = document.getElementById('agree');
+    const start = document.getElementById('start');
+    agree.addEventListener('change', () => {
+      start.disabled = !agree.checked;
+    });
+    start.addEventListener('click', () => {
+      window.location.href = "https://run.pavlovia.org/あなたのユーザー名/あなたの実験名/";
+    });
+  </script>
+</body>
+</html>
